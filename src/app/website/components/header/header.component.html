@@ -1,0 +1,49 @@
+<mat-toolbar class="header-toolbar" color="primary">
+    <mat-toolbar-row>
+        <div class="container">
+            <div class="row between-xs middle-xs">
+                <nav class="header-nav">
+                    <a mat-button routerLink="/">Inicio</a>
+                    <button mat-button [matMenuTriggerFor]="personaMenu">
+                        Personas
+                    </button>
+                    <button mat-button [matMenuTriggerFor]="EmpleadoMenu">
+                        Empleados
+                    </button> 
+                    <button mat-button [matMenuTriggerFor]="CitaMenu">
+                        Citas
+                    </button> 
+                    <button mat-button [matMenuTriggerFor]="ServicioMenu">
+                        Servicios
+                    </button>
+                    <button mat-button [matMenuTriggerFor]="VentaMenu">
+                        Ventas
+                    </button>                        
+                    <a mat-button routerLink="">ayuda</a>
+                    <a mat-button routerLink="#">Sobre nosotros</a>
+                </nav>
+               
+            </div>
+        </div>
+        <mat-menu #personaMenu="matMenu">
+            <a mat-menu-item routerLink="/persona/listar">listar</a>
+            <a mat-menu-item routerLink="/persona/crear">crear</a>
+        </mat-menu>
+        <mat-menu #EmpleadoMenu="matMenu">
+            <a mat-menu-item routerLink="/empleado/listar">listar</a>
+            <a mat-menu-item routerLink="/empleado/crear">crear</a>
+        </mat-menu>
+        <mat-menu #CitaMenu="matMenu">
+            <a mat-menu-item routerLink="/cita/listar">listar</a>
+            <a mat-menu-item routerLink="/cita/crear">crear</a>
+        </mat-menu>
+        <mat-menu #ServicioMenu="matMenu">
+            <a mat-menu-item routerLink="/servicio/listar">listar</a>
+            <a mat-menu-item routerLink="/servicio/crear">crear</a>
+        </mat-menu>
+        <mat-menu #VentaMenu="matMenu">
+            <a mat-menu-item routerLink="/venta/listar">listar</a>
+            <a mat-menu-item routerLink="/venta/crear">crear</a>
+        </mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,57 @@
+<form [formGroup]="form" (ngSubmit)="editar()" #forma="ngForm">
+
+    <mat-card class="shipping-card">
+        <mat-card-header>
+            <mat-card-title>Registrar persona</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <input type="hidden"  [(ngModel)]="data.id" formControlName="id">
+                <div class="col">
+                    <mat-form-field appearance="outline">                        
+                            <mat-label>Cliente</mat-label>
+                            <mat-select  formControlName="persona" [(ngModel)]="data.persona" required>
+                                <mat-option>seleccionar</mat-option>
+                                <mat-option *ngFor="let item of persona " [value]="item">
+                                    {{item.nombre}}
+                                </mat-option>
+                            </mat-select>                    
+                    </mat-form-field>
+                </div>
+
+                <div class="col">
+                    <mat-form-field appearance="outline">                        
+                        <mat-label>Empleado</mat-label>
+                        <mat-select  formControlName="empleado" required>
+                            <mat-option>seleccionar</mat-option>
+                            <mat-option *ngFor="let item of empleado " [value]="item">
+                                {{item.persona.nombre}}
+                            </mat-option>
+                        </mat-select>                    
+                </mat-form-field>
+                </div>
+            
+                <div class="col-sm-3">
+                   <mat-form-field appearance="outline">                        
+                            <mat-label>Servicio</mat-label>
+                            <mat-select  formControlName="servicio" required>
+                                <mat-option>seleccionar</mat-option>
+                                <mat-option *ngFor="let item of servicios " [value]="item">
+                                    {{item.tipo}}
+                                </mat-option>
+                            </mat-select>                    
+                    </mat-form-field>
+                </div>
+
+                <div class="col-sm-3">
+
+                </div>
+            </div>           
+        </mat-card-content>
+        <mat-card-actions>          
+            <button mat-raised-button color="accent"  type="submit" >Actualizar</button>
+            <button mat-raised-button color="warn" (click)="cerrar()" >Cancel</button>
+        </mat-card-actions>
+    </mat-card>
+
+</form>

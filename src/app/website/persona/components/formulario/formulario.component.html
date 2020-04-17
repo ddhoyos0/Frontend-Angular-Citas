@@ -1,0 +1,61 @@
+<form [formGroup]="form" (ngSubmit)="crear()" #forma="ngForm">
+
+    <mat-card class="shipping-card">
+        <mat-card-header>
+            <mat-card-title>Registrar persona</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-sm-4">
+                    <mat-form-field appearance="outline">                        
+                            <mat-label>Tipo de documento</mat-label>
+                            <mat-select  formControlName="identificacion" required>
+                                <mat-option>seleccionar</mat-option>
+                                <mat-option *ngFor="let item of tipoDocumento " [value]="item">
+                                    {{item.tipo}}
+                                </mat-option>
+                            </mat-select>
+                    
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field  appearance="outline">
+                        <mat-label>Documento</mat-label>
+                        <input matInput placeholder="Documento:" formControlName="documento">
+                    </mat-form-field>
+                </div>
+            
+                <div class="col-sm-4">
+                    <mat-form-field  appearance="outline">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput placeholder="Nombre:" type="text" formControlName="nombre">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <mat-form-field  appearance="outline">
+                        <mat-label>Celular</mat-label>
+                        <input matInput placeholder="Celular:" type="text" formControlName="celular">
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field  appearance="outline">
+                        <mat-label>Dirección</mat-label>
+                        <input matInput placeholder="Dirección:" type="text" formControlName="direccion">
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field  appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Email:" type="email" formControlName="email">
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit" >Grabar</button>
+        </mat-card-actions>
+    </mat-card>
+
+</form>

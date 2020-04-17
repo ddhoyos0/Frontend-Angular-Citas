@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "citas-web-front": {
@@ -28,6 +28,9 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/flexboxgrid/dist/flexboxgrid.min.css",
+              "./node_modules/swiper/css/swiper.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -92,6 +95,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -123,6 +127,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "citas-web-front"
+    }
+  },
+  "defaultProject": "citas-web-front",
+  "cli": {
+    "analytics": "348f6ac9-48fc-40bd-b552-4db4efc8c3c0"
+  }
 }

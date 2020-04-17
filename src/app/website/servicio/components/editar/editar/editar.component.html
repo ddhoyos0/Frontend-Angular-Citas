@@ -1,0 +1,31 @@
+<form [formGroup]="form">
+
+    <mat-card class="shipping-card">
+        <mat-card-header>
+            <mat-card-title>Registrar persona</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <input type="hidden"  [(ngModel)]="data.id" formControlName="id">
+                <div class="col-sm-6">
+                    <mat-form-field  appearance="outline">
+                        <input matInput placeholder="Tipo de servicio:" [(ngModel)]="data.tipo" formControlName="tipo">
+                    </mat-form-field>
+                </div>
+            
+                <div class="col-sm-6">
+                    <mat-form-field  appearance="outline">
+                        <input matInput placeholder="Nombre:" type="number" [(ngModel)]="data.precio" formControlName="precio">
+                    </mat-form-field>
+                </div>
+            </div>
+            
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="editar()"  >Actualizar</button>
+            <button mat-raised-button color="warn" (click)="cerrar()" >Cancel</button>
+        </mat-card-actions>
+    </mat-card>
+
+</form>
+

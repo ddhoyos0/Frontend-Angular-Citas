@@ -1,0 +1,28 @@
+<form [formGroup]="form" (ngSubmit)="crear()" >
+    <mat-card class="shipping-card">
+        <mat-card-header>
+            <mat-card-title>Registrar persona</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                
+                <div class="col-sm-4">
+                    <mat-form-field  appearance="outline">
+                        <input matInput placeholder="Tipo de servicio:" formControlName="tipo">
+                    </mat-form-field>
+                </div>
+            
+                <div class="col-sm-4">
+                    <mat-form-field  appearance="outline">
+                        <input matInput placeholder="Precio:" type="number" formControlName="precio">
+                    </mat-form-field>
+                </div>
+            </div>
+           
+        </mat-card-content>
+        <mat-card-actions>
+            <button id="GuardarServicioBtn" mat-raised-button color="primary" type="submit" >Grabar</button>
+        </mat-card-actions>
+    </mat-card>
+
+</form>

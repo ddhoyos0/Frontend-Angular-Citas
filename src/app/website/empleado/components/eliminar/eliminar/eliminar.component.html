@@ -1,0 +1,11 @@
+<div class="container">
+    <h3 mat-dialog-title>Esta seguro ?</h3>
+    <div mat-dialog-content>
+      <p> Id: {{data.id}} Nombre: {{data.nombre}}</p>
+    </div>
+  
+    <div mat-dialog-actions>
+      <button mat-button [mat-dialog-close]="1" (click)="confirmar()">Eliminar</button>
+      <button mat-button (click)="cerrar()" tabindex="-1">Cancel</button>
+    </div>
+  </div>

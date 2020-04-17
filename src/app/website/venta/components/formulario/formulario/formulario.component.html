@@ -1,0 +1,52 @@
+<form [formGroup]="form" (ngSubmit)="crear()">
+
+    <mat-card class="shipping-card">
+        <mat-card-header>
+            <mat-card-title>Registrar venta</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-sm-4">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Fecha</mat-label>
+                        <input  matInput type="date" formControlName="fecha">
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Citas</mat-label>               
+                        <mat-select formControlName="cita"(ngModelChange)="operaciones($event)" required>                           
+                            <mat-option *ngFor="let item of citas " [value]="item">
+                                {{item.servicio.tipo}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Utilidad</mat-label>
+                        <input matInput type="number" formControlName="utilidad">
+                    </mat-form-field>
+                </div>   
+            </div>
+            <div class="row">        
+                <div class="col-sm-4">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Comisión</mat-label>
+                        <input matInput  type="number"  formControlName="comision">
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Total</mat-label>
+                        <input matInput  type="number" formControlName="total">
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit">Grabar</button>
+        </mat-card-actions>
+    </mat-card>
+
+</form>
